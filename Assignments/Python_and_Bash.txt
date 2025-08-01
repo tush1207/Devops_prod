@@ -1,0 +1,77 @@
+Take a score as input and print the grade based on the following:
+90+ : "A"
+80-89 : "B"
+70-79 : "C"
+60-69 : "D"
+Below 60 : "F"
+here we used a basic if else statement to carry out marks and all.
+
+grade=int(input("Enter grade: "))
+if grade < 60 :
+    print("F")
+elif grade >= 90 :
+    print("A")
+elif grade >= 80 and grade <= 89 :
+    print("B")
+elif grade >= 70 and grade <= 79 :
+    print("C")
+elif grade >= 60 and grade <= 69 :
+    print("D")
+
+2 Student Grades
+Create a dictionary where the keys are student names and the values are their grades. Allow the user to:
+Add a new student and grade.
+Update an existing student’s grade.
+Print all student grades.
+Used dictionary and basic operations. Using if else:
+
+student_grades ={}
+
+while True:
+    print("1 Add Student and Grades : ")
+    print("2 Update an existing student’s grade : ")
+    print("3 Print all student grades")
+    print("4 Exit")
+    choice = input("Enter your choice: ")
+    if choice == "1" :
+        name = input("Enter student name: ")
+        if name in student_grades:
+            print("Student " + name + " is already registered")
+        else:
+            grade = int(input("Enter student grade: "))
+            student_grades[name] = grade
+
+    elif choice == "2" :
+        name = input("Enter student name: ")
+        if name in student_grades:
+            grade = int(input("Enter student grade: "))
+            student_grades[name] = grade
+        else:
+            print("Student not found.")
+    elif choice == "3" :
+        if not student_grades:
+            print("Student not found.")
+        else:
+            for name, grade in student_grades.items():
+                print(name, grade)
+
+
+
+3.Write to a File
+Write a program to create a text file and write some content to it.
+Using file functions like write and open.
+
+file_name =input("Enter the file name: ")
+content = input("Enter the content: ")
+
+with open(file_name,"w") as file:
+    file.write(content)
+print("File has been saved")
+
+
+4. Read from a File
+We used open in read mode and file.read to read and print to display.
+
+with open(file_name,"r") as file:
+    check=file.readline()
+print(check)
